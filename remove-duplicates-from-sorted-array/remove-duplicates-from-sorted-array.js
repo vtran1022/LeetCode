@@ -4,14 +4,16 @@
  */
 var removeDuplicates = function(nums) {
     let tracker = nums.length;
+    if (tracker === 0) {
+        return 0;
+    }
     
     const checkNums = (i) => {
       if (i === nums.length - 1) {
           return;
       }
         if (nums[i] === nums[i + 1]) {
-            let temp = nums.splice(i + 1, 1);
-            nums.push(temp);
+            nums.push(nums.splice(i + 1, 1));
             tracker--;
             checkNums(i);
         } else if (nums[i] < nums[i + 1]) {
