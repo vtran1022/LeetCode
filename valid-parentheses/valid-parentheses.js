@@ -25,8 +25,6 @@ var isValid = function(s) {
         if (i >= s.length) {
             return;
         }
-
-//         debugger;
         
         charIndex = brackets.open.indexOf(char);
         let eleIndex = brackets.closed.indexOf(s[i]);
