@@ -5,17 +5,17 @@
  */
 var findRestaurant = function(list1, list2) {
     let commonShop = [];
-    let shopTracker = new Map();
+    let shopTracker = {};
     list1.forEach((restaurant, i) => {
         list2.forEach((shop, j) => {
             if (restaurant === shop) {
-                shopTracker.set(shop, i + j);
+                shopTracker[shop] = i + j;
             }
         })
     })
     
-    let min = Math.min(...shopTracker.values());
-    for (let [key, value] of shopTracker.entries()) {
+    let min = Math.min(...Object.values(shopTracker));
+    for (let [key, value] of Object.entries(shopTracker)) {
         if (value === min) {
             commonShop.push(key);
         }
