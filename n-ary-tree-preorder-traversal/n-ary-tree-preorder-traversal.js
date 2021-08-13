@@ -18,14 +18,10 @@ var preorder = function(root) {
     }
     
     const dfs = (node) => {
-        if (node.val === null) {
+        if (node.val === null || !node.children) {
             return;
         }
         values.push(node.val);
-        
-        if (!node.children) {
-            return;
-        }
         for (const child of node.children) {
             dfs(child);
         }
