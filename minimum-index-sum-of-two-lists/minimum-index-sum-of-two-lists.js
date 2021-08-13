@@ -7,11 +7,10 @@ var findRestaurant = function(list1, list2) {
     let commonShop = [];
     let shopTracker = {};
     list1.forEach((restaurant, i) => {
-        list2.forEach((shop, j) => {
-            if (restaurant === shop) {
-                shopTracker[shop] = i + j;
-            }
-        })
+        let j = list2.indexOf(restaurant)
+        if (j !== -1) {
+            shopTracker[restaurant] = i + j;
+        }
     })
     
     let min = Math.min(...Object.values(shopTracker));
