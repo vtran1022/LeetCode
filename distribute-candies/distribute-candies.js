@@ -13,10 +13,6 @@ var distributeCandies = function(candyType) {
             candyTracker.set(candy, candyTracker.get(candy) + 1);
         }
     })
-    
-    console.log(candyTracker.size);
-    console.log(candyType.length / 2);
-    
     return candyTracker.size > (candyType.length / 2) ? (candyType.length / 2) : candyTracker.size;
 };
 
@@ -27,5 +23,6 @@ C: n is array length & even
 E: n is zero
 
 Iterate over the array and keep track of the different candies( Map constructor ? )
-Take the size of the tracker and divide by 2, rounding up
+If the tracker size is larger than the candy type length divisible by 2, thenw e return the candytype length / 2 
+otherwise return the tracker size
 */
